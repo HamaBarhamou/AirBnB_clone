@@ -7,7 +7,9 @@ from models.base_model import BaseModel
 
 class TestBaseModel(unittest.TestCase):
 
-    pass
+    def test_id(self):
+        b = BaseModel()
+        self.assertEqual(type("string"), type(b.id))
 
 
 if __name__ == '__main__':
