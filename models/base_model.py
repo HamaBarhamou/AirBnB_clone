@@ -2,7 +2,7 @@
 """Base class for all models in AirBnB clone"""
 import uuid
 from datetime import datetime
-from models import storage
+"""from models import storage"""
 
 
 class BaseModel:
@@ -29,7 +29,7 @@ class BaseModel:
                     def save(self):
                         """Updates the updated_at date time"""
                         self.updated_at = datetime.now()
-                        storage.save()
+                        """storage.save()"""
 
                         def to_dict(self):
                             """Returns dictionary"""
