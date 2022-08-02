@@ -11,6 +11,16 @@ class TestBaseModel(unittest.TestCase):
         b = BaseModel()
         self.assertEqual(type("string"), type(b.id))
 
+    def test_name(self):
+        b = BaseModel()
+        b.name = "My_First_model"
+        self.assertEqual(b.name, "My_First_model")
+
+    def test_number(self):
+        b = BaseModel()
+        b.my_number = 89
+        self.assertEqual(b.my_number, 89)
+
 
 if __name__ == '__main__':
     unittest.main()
