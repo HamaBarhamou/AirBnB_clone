@@ -51,10 +51,4 @@ class BaseModel:
         new_dict['created_at'] = self.created_at.isoformat()
         new_dict['updated_at'] = self.updated_at.isoformat()
 
-                    def save(self):
-                        """Updates the updated_at date time"""
-                        self.updated_at = datetime.now()
-                        """storage.save()"""
-
-
         return new_dict
