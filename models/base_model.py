@@ -21,11 +21,13 @@ class BaseModel:
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at":
-                    self.created_at = datetime.strptime(
-                            value, "%d/%m/%Y %H:%M:%S")
+                    date = value[0:10] + " " + value[11:]
+                    self.created_at = datetime.strptime(date, '%Y-%m-%d %H:%M:%S.%f')
                 elif key == "updated_at":
-                    self.updated_at = datetime.strptime(
-                            value, "%d/%m/%Y %H:%M:%S")
+                    #print("val:",value)
+                    date = value[0:10] + " " + value[11:]
+                    #print("val:",date)
+                    self.updated_at = datetime.strptime(date, "%Y-%m-%d %H:%M:%S.%f")
                 elif key != "__class__":
                     setattr(self, key, value)
                     
