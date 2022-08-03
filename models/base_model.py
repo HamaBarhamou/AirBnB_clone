@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """class BaseModel"""
 import uuid
+from uuid import uuid4
 from datetime import datetime
 
 #from models import storage
@@ -13,7 +14,11 @@ class BaseModel:
     """
     def __init__(self, *args, **kwargs):
         """Constructor of a BaseModel"""
-        if len(kwargs) > 0:
+        self.id = str(uuid.uuid4())
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
+        #models.storage.new(self)
+        if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at":
                     self.created_at = datetime.strptime(
@@ -23,12 +28,8 @@ class BaseModel:
                             value, "%d/%m/%Y %H:%M:%S")
                 elif key != "__class__":
                     setattr(self, key, value)
-                else:
-                    self.id = str(uuid.uuid4())
-                    self.created_at = datetime.now()
-                    self.updated_at = datetime.now()
-                    models.storage.new(self)
-
+                    
+        
     def __str__(self):
         """Return string representation for an object"""
         return '[{}] ({}) {}'.format(
@@ -37,7 +38,7 @@ class BaseModel:
     def save(self):
         """Updates instance attribute updated_at with current datetime"""
         self.updated_at = datetime.now()
-        models.storage.save()
+        #models.storage.save()
 
 
     def to_dict(self):

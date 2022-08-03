@@ -26,8 +26,9 @@ class FileStorage:
 
     def reload(self):
         """Deserializes the JSON file to __objetcs"""
-        with open(self.__file_path, 'r', enconding='UFT-8') as f:
+        """with open(self.__file_path, 'r', enconding='UFT-8') as f:
             jdic = json.load(f)
             for key in jdic:
                 value = date[jdic[key]["__class__"]](**jdic[key])
-                self.__object[key] = value
+                self.__object[key] = value"""
+        pass
