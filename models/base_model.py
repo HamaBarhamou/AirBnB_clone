@@ -4,7 +4,7 @@ import uuid
 from uuid import uuid4
 from datetime import datetime
 
-#from models import storage
+from models import storage
 
 
 class BaseModel:
@@ -18,6 +18,7 @@ class BaseModel:
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
         #models.storage.new(self)
+        #storage.new(self)
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at":
