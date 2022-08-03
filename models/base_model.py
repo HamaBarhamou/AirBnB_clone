@@ -2,7 +2,11 @@
 """class BaseModel"""
 import uuid
 from datetime import datetime
+<<<<<<< HEAD
 import models
+=======
+"""from models import storage"""
+>>>>>>> ad8d250e69c106ae156c757157a61c8026820fc4
 
 
 
@@ -39,11 +43,18 @@ class BaseModel:
         self.updated_at = datetime.now()
         models.storage.save()
 
+<<<<<<< HEAD
     def to_dict(self):
         """Returns dictionary containing all keys/values"""
         new_dict = self.__dict__.copy()
         new_dict['__class__'] = self.__class__.__name__
         new_dict['created_at'] = self.created_at.isoformat()
         new_dict['updated_at'] = self.updated_at.isoformat()
+=======
+                    def save(self):
+                        """Updates the updated_at date time"""
+                        self.updated_at = datetime.now()
+                        """storage.save()"""
+>>>>>>> ad8d250e69c106ae156c757157a61c8026820fc4
 
         return new_dict
