@@ -18,7 +18,7 @@ class BaseModel:
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
         #models.storage.new(self)
-        #storage.new(self)
+        storage.new(self)
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at":
