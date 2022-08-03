@@ -2,12 +2,8 @@
 """class BaseModel"""
 import uuid
 from datetime import datetime
-<<<<<<< HEAD
-import models
 
-"""from models import storage"""
-
-
+from models import storage
 
 
 class BaseModel:
@@ -15,7 +11,7 @@ class BaseModel:
     Defines all common attributes and methods
     for other classes
     """
-    def __init__(self, *args, *kwargs):
+    def __init__(self, *args, **kwargs):
         """Constructor of a BaseModel"""
         if len(kwargs) > 0:
             for key, value in kwargs.items():

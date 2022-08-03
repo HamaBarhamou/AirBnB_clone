@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """Recreates a BaseModel from another one by using dictionary rep"""
+
 import json
-from models.base_model import BaseModel
-import models
 
 
 class FileStorage:
@@ -32,5 +31,3 @@ class FileStorage:
             for key in jdic:
                 value = date[jdic[key]["__class__"]](**jdic[key])
                 self.__object[key] = value
-                except FileNotFoundError:
-                    pass
