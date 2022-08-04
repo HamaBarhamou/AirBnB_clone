@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"BaseModel.22cb6f5c-97cb-4fc0-9718-a8383b07d558": "{'id': '22cb6f5c-97cb-4fc0-9718-a8383b07d558', 'created_at': datetime.datetime(2022, 8, 4, 20, 36, 50, 534512), 'updated_at': datetime.datetime(2022, 8, 4, 20, 36, 50, 534656), 'name': 'My First Model', 'my_number': 89}"}
+=======
+{"BaseModel.4360a25f-d373-4751-82f9-49a23351a4ce": {"id": "4360a25f-d373-4751-82f9-49a23351a4ce", "created_at": "2022-08-04 16:37:11.131430", "updated_at": "2022-08-04 16:37:11.131443", "name": "My_First_Model", "my_number": 89}, "BaseModel.ce8939e4-6258-41f5-9cb6-a3c66cfad129": {"id": "ce8939e4-6258-41f5-9cb6-a3c66cfad129", "created_at": "2022-08-04 16:37:13.901916", "updated_at": "2022-08-04 16:37:13.901929", "name": "My_First_Model", "my_number": 89}, "BaseModel.3af0b969-c0bb-439e-a353-c2819e6024ca": {"id": "3af0b969-c0bb-439e-a353-c2819e6024ca", "created_at": "2022-08-04 16:37:16.111089", "updated_at": "2022-08-04 16:37:16.111112", "name": "My_First_Model", "my_number": 89}}
+>>>>>>> a4f151ddc0dabe6a733b5f5b2f39cdf4de18f2df

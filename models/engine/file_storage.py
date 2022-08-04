@@ -15,29 +15,21 @@ class FileStorage:
     
     def new(self,obj):
         """Sets in __objetcs the obj with key"""
-        self.__objects["{}.{}".format(obj.__class__.__name__, obj.id)] = obj
-        #self.__objects["{}.{}".format(obj.__class__.__name__, obj.id)] = obj.__dict__
+        FileStorage.__objects["{}.{}".format(obj.__class__.__name__, obj.id)] = obj.__dict__
+        
 
     def save(self):
         """Serializes objects to the JSON file"""
 
-        dic_obj = {}
-        with open(self.__file_path, "w", encoding="utf-8") as f:
-            for key, value in self.__objects.items():
-                dic_obj[key] = str(value.__dict__)
-            json.dump(dic_obj, f)
+        with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
+            json.dump(FileStorage.__objects, f, default=str)#, indent=4, sort_keys=True""")
 
     def reload(self):
         """Deserializes the JSON file to __objetcs"""
 
         try:
-            with open(self.__file_path, 'r', encoding="utf-8") as f:
-                jdic = json.load(f)
-                #print("jdic: ",jdic)
-                for key, value in jdic.items():
-                    #value = date[jdic[key]["__class__"]](**jdic[key])
-                    #self.__object[key] = value
-                    #print("key: {} value: {}".format(key,value))
-                    self.__objects[key]=dict(value)
-        except:
+            with open(FileStorage.__file_path, 'r', encoding="utf-8") as f:
+                FileStorage.__objects = json.load(f)
+        except Exception:
             pass
+        #print("apres reload: ",FileStorage.__objects)
