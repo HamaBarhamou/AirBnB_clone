@@ -31,11 +31,13 @@ class FileStorage:
         """Deserializes the JSON file to __objetcs"""
 
         try:
-            with open(self.__file_path, 'r', enconding='UFT-8') as f:
+            with open(self.__file_path, 'r', encoding="utf-8") as f:
                 jdic = json.load(f)
-                for key in jdic:
-                    value = date[jdic[key]["__class__"]](**jdic[key])
-                    self.__object[key] = value
-                    pass
+                #print("jdic: ",jdic)
+                for key, value in jdic.items():
+                    #value = date[jdic[key]["__class__"]](**jdic[key])
+                    #self.__object[key] = value
+                    #print("key: {} value: {}".format(key,value))
+                    self.__objects[key]=dict(value)
         except:
             pass
