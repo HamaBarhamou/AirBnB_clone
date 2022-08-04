@@ -22,7 +22,7 @@ class FileStorage:
         """Serializes objects to the JSON file"""
 
         with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
-            json.dump(FileStorage.__objects, f, default=str, indent=4, sort_keys=True)
+            json.dump(FileStorage.__objects, f, default=str)#, indent=4, sort_keys=True""")
 
     def reload(self):
         """Deserializes the JSON file to __objetcs"""
@@ -31,6 +31,5 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r', encoding="utf-8") as f:
                 FileStorage.__objects = json.load(f)
         except Exception:
-            print("errr", Exception)
             pass
         #print("apres reload: ",FileStorage.__objects)
