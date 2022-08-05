@@ -38,7 +38,7 @@ class HBNBCommand(cmd.Cmd):
             instances = models.storage.all()
             keys = base_list[0] + '.' + base_list[1]
             if keys in instances:
-                print(instances[key_value])
+                print(instances[keys])
             else:
                 print("** no instance found **")
 
