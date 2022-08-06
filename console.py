@@ -8,12 +8,10 @@ from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 
 
-
 class HBNBCommand(cmd.Cmd):
     """HBNB class"""
     prompt = '(hbnb) '
     classes = {'BaseModel': BaseModel}
-
 
     def do_EOF(self, line):
         """end-of-file cmd: exit the program"""
@@ -80,7 +78,7 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
         else:
             instances = className[0] + "." + className[1]
-            if instances  in models.storage.all():
+            if instances in models.storage.all():
                 del models.storage.all()[instances]
                 models.storage.save()
             else:
@@ -120,8 +118,5 @@ class HBNBCommand(cmd.Cmd):
                 print("** value missing **")
 
 
-
-
-
 if __name__ == '__main__':
-     HBNBCommand().cmdloop()
+    HBNBCommand().cmdloop()
