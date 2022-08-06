@@ -17,23 +17,21 @@ class BaseModel:
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
-        #models.storage.new(self)
-        
+
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at":
                     date = value[0:10] + " " + value[11:]
-                    self.created_at = datetime.strptime(date, '%Y-%m-%d %H:%M:%S.%f')
+                    self.created_at = datetime.strptime(
+                        date, '%Y-%m-%d %H:%M:%S.%f')
                 elif key == "updated_at":
-                    #print("val:",value)
                     date = value[0:10] + " " + value[11:]
-                    #print("val:",date)
-                    self.updated_at = datetime.strptime(date, "%Y-%m-%d %H:%M:%S.%f")
+                    self.updated_at = datetime.strptime(
+                        date, "%Y-%m-%d %H:%M:%S.%f")
                 elif key != "__class__":
                     setattr(self, key, value)
         storage.new(self)
-                    
-        
+
     def __str__(self):
         """Return string representation for an object"""
         return '[{}] ({}) {}'.format(
@@ -42,9 +40,7 @@ class BaseModel:
     def save(self):
         """Updates instance attribute updated_at with current datetime"""
         self.updated_at = datetime.now()
-        #models.storage.save()
         storage.save()
-
 
     def to_dict(self):
         """Returns dictionary containing all keys/values"""
