@@ -14,6 +14,30 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
     classes = {'BaseModel': BaseModel}
 
+
+    def do_EOF(self, line):
+        """end-of-file cmd: exit the program"""
+        return True
+
+    def help_EOF(self):
+        """Help to exit the program"""
+        print("end-of-file: exit the program\n")
+
+    def do_quit(self, line):
+        """Quit the program"""
+        return True
+
+    def help_quit(self):
+        """Help to quit the program"""
+        print("Exit the program\n")
+
+    def emptyline(self):
+        """
+        If this method is not overriden, it repeats
+        the last nonempty cmd entered
+        """
+        pass
+
     def do_create(self, classNam):
         """Creates a new instance of BaseModel"""
         if len(classNam) == 0:
@@ -88,30 +112,6 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
             return
 
-        
-
-    def do_EOF(self, line):
-        """end-of-file cmd: exit the program"""
-        return True
-
-    def help_EOF(self):
-        """Help to exit the program"""
-        print("end-of-file: exit the program\n")
-
-    def do_quit(self, line):
-        """Quit the program"""
-        return True
-
-    def help_quit(self):
-        """Help to quit the program"""
-        print("Exit the program\n")
-
-    def emptyline(self):
-        """
-        If this method is not overriden, it repeats
-        the last nonempty cmd entered
-        """
-        return False
 
 if __name__ == '__main__':
      HBNBCommand().cmdloop()
