@@ -2,23 +2,13 @@
 The AirBnB Console allows us to manage the objects of the web app.
 <table>
 <tr>
-<td width="30%">
-Functions:
-</td>
-<td width="30%">
-Create a new object (ex: User or Place)
-</td>
-<td width="30%">
-Retrieve an object from a file, database, etc.
-</td>
-<td width="30%">
-Do operations on objects (count, compute stats, etc...)
-</td>
-<td width="30%">
-Update attributes of an object.
-</td>
-<td width="30%">
-Destroy an object.
-</td>
+<th>Functions</th>
+<th>Command to use</th>
+<th>¿What the cmd is doing?</th>
 </tr>
-</table>
+<tr>
+<td>Create a new object (ex: User or Place)</td>
+<td>create BaseModel</td>
+<td>Creates a new instance of BaseModel</td>
+</tr>
+
