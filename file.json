@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"BaseModel.06ceea50-84f5-4391-bf06-69a294d39a41": {"id": "06ceea50-84f5-4391-bf06-69a294d39a41", "created_at": "2022-08-06 18:49:00.054880", "updated_at": "2022-08-06 18:49:00.054969", "name": "My First Model", "my_number": 89}}
-=======
-{"BaseModel.ba539527-3641-48f1-8f23-3a1eba9ff016": {"id": "ba539527-3641-48f1-8f23-3a1eba9ff016", "created_at": "2022-08-06 17:56:01.414656", "updated_at": "2022-08-06 17:56:01.414716", "name": "My First Model", "my_number": 89}, "BaseModel.63bdc751-9635-4627-bcbc-393753a941be": {"id": "63bdc751-9635-4627-bcbc-393753a941be", "created_at": "2022-08-06 17:56:22.698720", "updated_at": "2022-08-06 17:56:22.698771", "name": "My_First_Model", "my_number": 89}}
->>>>>>> a3f57946e9550f4ca0c89b84ae32ee922febe296
+{"BaseModel.06ceea50-84f5-4391-bf06-69a294d39a41": {"id": "06ceea50-84f5-4391-bf06-69a294d39a41", "created_at": "2022-08-06 18:49:00.054880", "updated_at": "2022-08-06 18:49:00.054969", "name": "My First Model", "my_number": 89}
