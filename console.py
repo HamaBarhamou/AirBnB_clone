@@ -3,6 +3,7 @@ import cmd
 import sys
 import json
 import models
+import shlex
 from models import storage
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
@@ -15,7 +16,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, line):
         """end-of-file cmd: exit the program"""
-        return True
+        print("")
+        exit()
 
     def help_EOF(self):
         """Help to exit the program"""
@@ -23,7 +25,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, line):
         """Quit the program"""
-        return True
+        exit()
 
     def help_quit(self):
         """Help to quit the program"""
@@ -99,23 +101,27 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, classNam):
         """Updates an instance based on the class name"""
-        classNam = classNam.split()
-        objs = storage.all()
+        classNam = shlex.split(classNam)
 
         if len(classNam) == 0:
-            print("** missing class name **")
-        elif classNam[0] not in HBNBCommand.classes:
-            print("** class doesn't exist **")
+            print("** class name missing **")
+            return
+        if classNam[0] not in HBNBCommand.classes.keys():
+            print("** class doesn't exist *+")
+            return
         elif len(classNam) == 1:
             print("** instance id missing **")
-        else:
-            keys = classNam[0] + '.' + classNam[1]
-            if keys not in models.storage.all():
-                print("** no instance found **")
-            elif len(classNam) < 3:
-                print("** attribute name missing **")
-            elif len(classNam) < 4:
-                print("** value missing **")
+            return
+        args = classNam[0] + '.' + classNam[1]
+        if args not in models.storage.all():
+            print("** no instance found **")
+            return
+        elif len(classNam) == 2:
+            print("** attribute name missing **")
+            return
+        elif len(classNam) == 3:
+            print("** value missing **")
+            return
 
 
 if __name__ == '__main__':
