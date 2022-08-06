@@ -1,5 +1,5 @@
 <h1>AirBnB Clone <em>-The Console</em></h1>
-![HBNB Image](screenshot.png)
+![HBNB Image](screenshot.png?raw=true)
 The AirBnB Console allows us to manage the objects of the web app.
 <html>
 <body>
