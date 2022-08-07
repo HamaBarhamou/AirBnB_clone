@@ -23,6 +23,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(b.my_number, 89)
 
     def test_pycodestyle(self):
+        """Test that we conform to PEP-8."""
         style = pycodestyle.StyleGuide(quiet=True)
         result = style.check_files([
             'console.py',
@@ -33,11 +34,11 @@ class TestBaseModel(unittest.TestCase):
             'models/__init__.py/',
             'models/engine/__init__.py',
             'models/engine/file_storage.py',
-            'tests/__init__.py',
-            'tests/test_base_model.py',
+            'tests/test_modules/__init__.py',
+            'tests/test_modules/test_base_model.py',
             ])
-        self.assertEqual(result.total_errors, 0,
-                         "Found code style errors (and warnings).")
+        self.assertEqual(
+            result.total_errors, 0, "Found code style errors (and warnings).")
         pass
 
 
