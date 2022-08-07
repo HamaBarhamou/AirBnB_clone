@@ -20,9 +20,9 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
     """HBNB class"""
     prompt = '(hbnb) '
-    classes = {'BaseModel': BaseModel, 'User': User,
-               'Place': Place, 'State': State, 'City': City,
-               'Amenity': Amenity, 'Review': Review}
+    classes = {'BaseModel': BaseModel, 'User': User, 'City': City,
+               'Place': Place, 'Amenity': Amenity, 'Review': Review,
+               'State': State}
 
     def do_EOF(self, line):
         """end-of-file cmd: exit the program"""
