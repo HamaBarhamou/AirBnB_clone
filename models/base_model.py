@@ -29,7 +29,7 @@ class BaseModel:
                         date, "%Y-%m-%d %H:%M:%S.%f")
                 elif key != "__class__":
                     setattr(self, key, value)
-        storage.new(self)
+        models.storage.new(self)
 
     def __str__(self):
         """Return string representation for an object"""
@@ -39,7 +39,7 @@ class BaseModel:
     def save(self):
         """Updates instance attribute updated_at with current datetime"""
         self.updated_at = datetime.now()
-        storage.save()
+        models.storage.save()
 
     def to_dict(self):
         """Returns dictionary containing all keys/values"""
