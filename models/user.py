@@ -3,7 +3,7 @@
 from models.base_model import BaseModel
 
 
-class User:
+class User(BaseModel):
     """Defines attributes for the creation of new Users"""
     email = ""
     password = ""
