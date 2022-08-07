@@ -38,7 +38,8 @@ class TestBaseModel(unittest.TestCase):
             'tests/test_modules/test_base_model.py',
             ])
         self.assertEqual(
-            result.total_errors, 0, "Found code style errors (and warnings).")"""
+            result.total_errors, 0,
+            "Found code style errors (and warnings).")"""
         pass
 
 
