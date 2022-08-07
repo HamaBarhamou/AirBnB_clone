@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import cmd
+from multiprocessing.sharedctypes import Value
 import sys
 import json
 import models
@@ -101,6 +102,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, classNam):
         """Updates an instance based on the class name"""
+    
         classNam = shlex.split(classNam)
 
         if len(classNam) == 0:
@@ -109,19 +111,26 @@ class HBNBCommand(cmd.Cmd):
         if classNam[0] not in HBNBCommand.classes.keys():
             print("** class doesn't exist *+")
             return
-        elif len(classNam) == 1:
+        if len(classNam) == 1:
             print("** instance id missing **")
             return
         args = classNam[0] + '.' + classNam[1]
         if args not in models.storage.all():
             print("** no instance found **")
             return
-        elif len(classNam) == 2:
+        if len(classNam) == 2:
             print("** attribute name missing **")
             return
-        elif len(classNam) == 3:
+        if len(classNam) == 3:
             print("** value missing **")
             return
+        attr = classNam[2]
+        value = classNam[3]
+        objs = storage.all()
+        ob = objs[classNam[0] + "." + classNam[1]]
+        ob[attr] = value
+        
+        
 
 
 if __name__ == '__main__':
