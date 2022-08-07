@@ -3,7 +3,7 @@
 from models.base_model import BaseModel
 
 
-class Review:
+class Review(BaseModel):
     """Attributes for the review class"""
     place_id = ""
     user_id = ""
