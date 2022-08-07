@@ -2,6 +2,11 @@
 """Recreates a BaseModel from another one by using dictionary rep"""
 
 import json
+from models.base_model import BaseModel
+from models.user import User
+
+
+classes_storage = {"BaseModel": BaseModel, "User": User}
 
 
 class FileStorage:
