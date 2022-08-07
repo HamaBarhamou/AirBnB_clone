@@ -2,7 +2,6 @@
 """Recreates a BaseModel from another one by using dictionary rep"""
 
 import json
-import models
 from models.base_model import BaseModel
 from models.user import User
 from models.place import Place

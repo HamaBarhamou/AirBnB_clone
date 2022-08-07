@@ -4,10 +4,8 @@ import cmd
 from multiprocessing.sharedctypes import Value
 import sys
 import json
-import models
 import shlex
 from models import storage
-from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from models.user import User
 from models.place import Place
