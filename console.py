@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""AirBnB -The Console."""
+"""AirBnB Console"""
 import cmd
 from multiprocessing.sharedctypes import Value
 import sys
