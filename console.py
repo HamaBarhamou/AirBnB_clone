@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """AirBnB Console"""
 import cmd
+from multiprocessing.sharedctypes import Value
 import sys
 import json
 import models
@@ -90,7 +91,7 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, classNam):
         """Print a string of an instance based on class name"""
         args = classNam.split(" ")
-        if args[0] == "" or args[0]in HBNBCommand.classes:
+        if args[0] == "" or args[0] in HBNBCommand.classes:
             string = []
             objs = storage.all()
             for key in objs.keys():
@@ -102,6 +103,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, classNam):
         """Updates an instance based on the class name"""
+    
         classNam = shlex.split(classNam)
 
         if len(classNam) == 0:
@@ -110,20 +112,26 @@ class HBNBCommand(cmd.Cmd):
         if classNam[0] not in HBNBCommand.classes.keys():
             print("** class doesn't exist *+")
             return
-        elif len(classNam) == 1:
+        if len(classNam) == 1:
             print("** instance id missing **")
             return
         args = classNam[0] + '.' + classNam[1]
         if args not in models.storage.all():
             print("** no instance found **")
             return
-        elif len(classNam) == 2:
+        if len(classNam) == 2:
             print("** attribute name missing **")
             return
-        elif len(classNam) == 3:
+        if len(classNam) == 3:
             print("** value missing **")
             return
-
+        attr = classNam[2]
+        value = classNam[3]
+        objs = storage.all()
+        id = classNam[0] + "." + classNam[1]
+        objs[id][attr] = value
+        models.storage.update_obejts(objs)
+        
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
