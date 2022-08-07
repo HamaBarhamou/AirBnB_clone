@@ -103,7 +103,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, classNam):
         """Updates an instance based on the class name"""
-    
+
         classNam = shlex.split(classNam)
 
         if len(classNam) == 0:
@@ -131,7 +131,7 @@ class HBNBCommand(cmd.Cmd):
         id = classNam[0] + "." + classNam[1]
         objs[id][attr] = value
         models.storage.update_obejts(objs)
-        
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
