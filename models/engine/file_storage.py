@@ -32,3 +32,7 @@ class FileStorage:
                 FileStorage.__objects = json.load(f)
         except Exception:
             pass
+
+    def update_obejts(self, ob):
+        FileStorage.__objects = ob
+        self.save()

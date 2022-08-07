@@ -127,11 +127,10 @@ class HBNBCommand(cmd.Cmd):
         attr = classNam[2]
         value = classNam[3]
         objs = storage.all()
-        ob = objs[classNam[0] + "." + classNam[1]]
-        ob[attr] = value
+        id = classNam[0] + "." + classNam[1]
+        objs[id][attr] = value
+        models.storage.update_obejts(objs)
         
-        
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
