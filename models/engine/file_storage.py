@@ -11,7 +11,6 @@ from models.amenity import Amenity
 from models.review import Review
 
 
-
 class FileStorage:
     """Class that almacenates models of AirBnB clone"""
     __file_path = "file.json"

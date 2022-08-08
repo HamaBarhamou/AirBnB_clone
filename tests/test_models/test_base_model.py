@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ Module for unittest"""
 
-import imp
 import unittest
 import pycodestyle
 
@@ -23,26 +22,6 @@ class TestBaseModel(unittest.TestCase):
         b = BaseModel()
         b.my_number = 89
         self.assertEqual(b.my_number, 89)
-
-    def test_pycodestyle(self):
-        """Test that we conform to PEP-8."""
-        """style = pycodestyle.StyleGuide(quiet=True)
-        result = style.check_files([
-            'console.py',
-            'test_base_model.py',
-            'test_base_model_dict.py',
-            'test_save_reload_base_model.py',
-            'models/base_model.py',
-            'models/__init__.py/',
-            'models/engine/__init__.py',
-            'models/engine/file_storage.py',
-            'tests/test_modules/__init__.py',
-            'tests/test_modules/test_base_model.py',
-            ])
-        self.assertEqual(
-            result.total_errors, 0,
-            "Found code style errors (and warnings).")"""
-        pass
 
 
 if __name__ == '__main__':
