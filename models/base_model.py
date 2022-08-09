@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """class BaseModel"""
 import models
+import os
 import uuid
 from uuid import uuid4
 from datetime import datetime
