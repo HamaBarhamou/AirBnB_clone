@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """class BaseModel"""
-import uuid
+import models
 from uuid import uuid4
 from datetime import datetime
-import models
 
 
 class BaseModel:
@@ -49,3 +48,6 @@ class BaseModel:
         new_dict['updated_at'] = self.updated_at.isoformat()
 
         return new_dict
+
+
+~
