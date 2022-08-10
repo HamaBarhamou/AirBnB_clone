@@ -3,6 +3,7 @@
 import cmd
 from multiprocessing.sharedctypes import Value
 import sys
+import os
 import json
 import shlex
 import models

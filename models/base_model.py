@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """class BaseModel"""
-import sys
-sys.path.append('models')
+import models
 import uuid
 from uuid import uuid4
 from datetime import datetime

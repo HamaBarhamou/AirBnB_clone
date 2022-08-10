@@ -3,8 +3,9 @@
 
 import unittest
 import pycodestyle
-
+import sys
 from models.base_model import BaseModel
+
 
 
 class TestBaseModel(unittest.TestCase):
